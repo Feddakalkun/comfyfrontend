@@ -1,0 +1,8 @@
+{
+    "nodes": [
+        {
+            "name": "ComfyUI-Manager",
+            "url": "https://github.com/ltdrdata/ComfyUI-Manager.git"
+        }
+    ]
+}
