@@ -29,9 +29,13 @@ if not exist "%VENV_DIR%" (
     python -m venv "%VENV_DIR%"
 )
 
-:: Install Requirements
-echo [SETUP] Installing requirements...
+:: Install Torch with CUDA support (Vital for NVIDIA GPUs)
+echo [SETUP] Installing PyTorch (CUDA 12.1)...
 call "%VENV_DIR%\Scripts\activate.bat"
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+:: Install Requirements
+echo [SETUP] Installing other requirements...
 pip install -r "%COMFYUI_DIR%\requirements.txt" --no-warn-script-location
 
 echo.
